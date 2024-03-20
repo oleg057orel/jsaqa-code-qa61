@@ -1,4 +1,3 @@
-const { TestWatcher } = require("jest");
 const sorting = require("../../app");
 
 describe("Books names test suit", () => {
@@ -7,19 +6,25 @@ describe("Books names test suit", () => {
       sorting.sortByName([
         "Гарри Поттер",
         "Властелин Колец",
-        "Волшебник изумрудного города",
+        "Волшебник изумрудного города"
       ])
-    ).toEqual([
+    ).toEqual([ 
       "Властелин Колец",
       "Волшебник изумрудного города",
-      "Гарри Поттер",
+      "Гарри Поттер"
     ]);
   });
-
-  test("No sorted books", () => {
-    const input = ["Алиса в стране чудес", "Алиса в стране чудес"];
-    const output = sorting.sortByName(input);
-    const expected = ["Алиса в стране чудес", "Алиса в стране чудес"];
-    expect(output).toEqual(expected);
-  });
 });
+test("Should not sorting", () => {
+    expect(
+      sorting.sortByName([
+        "Гарри Поттер",
+        "Гарри Поттер",
+        "Гарри Поттер"
+      ])
+    ).toEqual([ 
+        "Гарри Поттер",
+        "Гарри Поттер",
+        "Гарри Поттер"
+    ]);
+  });

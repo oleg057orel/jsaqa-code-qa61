@@ -6,32 +6,34 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "coverage": "jest --collectCoverage"
+    "coverage": "jest --collectCoverage",
+    "eslint": "eslint"
   },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "html"
-    ],
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/coverage/**"
-    ],
-    "coverageThreshold": {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100
-    }
+  "collectCoverageFrom": [
+    "**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/coverage/**"
+  ],
+  "coverageThreshold": {
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
   },
   "keywords": [
     "jest",
     "test",
     "jsaqa"
   ],
-  "author": "omelnikova",
+  "author": "lazarovom",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
     "jest": "^27.5.1"
+  },
+  "directories": {
+    "test": "test"
   }
 }
